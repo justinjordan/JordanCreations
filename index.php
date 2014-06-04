@@ -4,6 +4,6 @@
 	<title>JordanCreations</title>
 </head>
 <body>
-	<h1>This is the new site!</h1>
+	<h1>This is a git update!</h1>
 </body>
 </html>
