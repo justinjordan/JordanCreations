@@ -1,5 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+
 body
 {
-	margin: 50px;
+	background-color: #0070cc;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
 }
 
+.bubble
+{
+	position: relative;
+	width: 500px;
+	min-height: 300px;
+
+	background-color: #aaf;
+
+}
