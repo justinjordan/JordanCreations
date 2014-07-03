@@ -2,6 +2,7 @@
 <html lang="en" ng-app>
 <head>
 	<title>JordanCreations</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 	<link rel="stylesheet" type="text/css" href="reset.css"/>
 	
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen, handheld"/>
@@ -27,6 +28,7 @@
         <div class="outer-center">
             <div class="inner-center">
                 <div id="nav-div">
+					<p>&#9776;</p>
                     <ul>
                         <li class="nav-selected"><a href="#">News</a></li>
                         <li><a href="#">Blog</a></li>
