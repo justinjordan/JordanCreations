@@ -6,7 +6,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen, handheld"/>
 	<link rel="stylesheet" type="text/css" href="enhanced.css" media="screen and (min-width: 40.5em)"/>
-	<!--[if (lt IE 9>&(!IEMobile)]>
+	<!--[if (lt IE 9)&(!IEMobile)]>
 	<link rel="stylesheet" type="text/css" href="enhanced.css"/>
 	<![endif]-->
 	
