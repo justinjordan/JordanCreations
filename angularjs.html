@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='store'>
+<head>
+	<title>AngularJS Experimentation</title>
+	
+	
+</head>
+<body>
+	
+	<div ng-controller='StoreController as store' ng-repeat="user in store.users">
+		<h1>{{user.name}}</h1>
+        <h2>{{user.age}}</h2>
+        <p>{{user.location}}</p>
+	</div>
+    
+    <div>{{store.user}}</div>
+    
+	<!-- Load Dependencies -->
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<!-- End of Load Dependencies -->
+</body>
+</html>

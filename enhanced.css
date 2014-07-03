@@ -17,6 +17,11 @@ body
 	font-weight: 400;
 }
 
+#wrapper-div
+{
+    min-width: 1200px;
+}
+
 #top-div
 {
     text-align: right;
@@ -29,18 +34,14 @@ body
 #head-div
 {
     background-color: #0070cc;
-	padding-bottom: 4em;
+    height: 141px;
 }
 #head-div img
 {
     position: relative;
     
-    left: 10%;
-    top: 2em;
-	
-	max-width: 382px;
-	width: 75%;
-	height: auto;
+    left: 60px;
+    top: 40px;
 }
 
 #separator-div
@@ -71,7 +72,9 @@ body
 
 #nav-div ul
 {
-    display: none;
+	display: block;
+	
+    height: 40px;
 }
 #nav-div ul li
 {
@@ -108,6 +111,7 @@ body
 
 #main-div
 {
+    width: 1100px;
 	min-height: 1000px;
     margin: 0 auto 100px auto;
 }
@@ -119,8 +123,7 @@ body
 .bubble
 {
 	position: relative;
-	left: 5%;
-	width: 90%;
+	width: 600px;
 	min-height: 300px;
     
     border: 0;
@@ -128,14 +131,20 @@ body
 
 	background-color: #0af;
 
-    margin-top: 4em;
+	padding: 20px;
+    margin-top: 60px;
     
     font-family: 'Comfortaa', sans-serif;
 }
 
+.bubble:nth-child(even)
+{
+    left: 440px;
+}
+
 .bubble header
 {
-    padding-bottom: 3em;
+    padding-bottom: 40px;
 }
 
 .bubble header figure
@@ -165,7 +174,7 @@ body
 
 .bubble article p
 {
-    padding: 0 3em 3em;
+    padding: 0 20px 20px;
     
 	line-height: 24px;
 	text-align: justify;
