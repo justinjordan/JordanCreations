@@ -1,19 +1,23 @@
-(function(){
+var jcApp = angular.module('jcApp', [
+    'ngRoute',
+    'jcControllers'
+]);
 
-	var app = angular.module('store', [ ]);
-	
-	app.controller('StoreController', function()
-	{
-        this.users = [ User('Justin', 25, 'Mpls') ];
-	});
-	
-    function User(name, age, location)
-    {
-        return {
-            name: name,
-            age: age,
-            location: location
-        };
-    }
-    
-})();
+jcApp.config(['$routeProvider', function($routeProvider){
+    $routeProvider.
+
+        when('/home', {
+            templateUrl: 'partials/home.html',
+            controller: 'homeCtrl'
+        }).
+
+        when('/about', {
+            templateUrl: 'partials/about.html',
+            controller: 'aboutCtrl'
+        }).
+
+        otherwise({
+            redirectTo: '/home'
+        });
+}]);
+

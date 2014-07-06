@@ -1,25 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Dosis);
-@import url(http://fonts.googleapis.com/css?family=Maven+Pro);
-
-@import url(http://fonts.googleapis.com/css?family=Text+Me+One);
-@import url(http://fonts.googleapis.com/css?family=Comfortaa:400,700,300);
-
-h1
-{
-    font-size: 160%;
-    font-weight: bold;
-}
-
-body
-{
-	background-color: #000;
-	font-family: 'Dosis', sans-serif;
-	font-weight: 400;
-}
-
 #wrapper-div
 {
-    min-width: 1200px;
+    min-width: 80em;
 }
 
 #top-div
@@ -29,15 +10,15 @@ body
     text-align: right;
     
     height: 40px;
-    background: #333 url('images/top-bar-bg.png') repeat-x;
-    border-bottom: 1px solid #0cf;
+	background: #333 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAIAAABxU02MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY3QkY0RTBGQTkyMjExRTI4MzNEOTZDRjFEQ0JEOEMyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY3QkY0RTEwQTkyMjExRTI4MzNEOTZDRjFEQ0JEOEMyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjdCRjRFMERBOTIyMTFFMjgzM0Q5NkNGMURDQkQ4QzIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjdCRjRFMEVBOTIyMTFFMjgzM0Q5NkNGMURDQkQ4QzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6foajwAAAANElEQVR42mL09PRkIBcwMVAAWP79+zdq86jNozaP2jxkbf7///+o5lHNo5pHSxLKbAYIMAAHYUvutSIFAQAAAABJRU5ErkJggg==) repeat-x;    border-bottom: 1px solid #0cf;
 }
 
 #head-div
 {
     background-color: #0070cc;
-    height: 141px;
+    height: 6em;
 }
+
 #head-div img
 {
     position: relative;
@@ -48,8 +29,8 @@ body
 
 #separator-div
 {
-    background: #0070cc url('images/main-nav-bg.png') repeat-x;
-    
+	background: #0070cc url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAIAAABxU02MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFCNzZFN0JFQTkyMjExRTI5Q0RERjlGMEUwRDU1MjQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFCNzZFN0JGQTkyMjExRTI5Q0RERjlGMEUwRDU1MjQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUI3NkU3QkNBOTIyMTFFMjlDRERGOUYwRTBENTUyNDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUI3NkU3QkRBOTIyMTFFMjlDRERGOUYwRTBENTUyNDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5AlXZ6AAAAfklEQVR42uRVQQ7AIAgrif8/77EgQ9wHVg7E6KHhUpE2VMFjgABO4MA0irgwyVG6EzhgQSZPdpa86T/uZ1c6F9SeYOUOstY6U2oFhlW6qukEVmc2duTPqia127bqVJ+1bauKYcCrvTs7CNzped1WnZmeV/pc/WLbyGxuvwIMAMRj50Kj2MI1AAAAAElFTkSuQmCC) repeat-x;
+	
     height: 40px;
 }
 
@@ -72,6 +53,10 @@ body
 }
 /*  ==End==  */
 
+#mobile-menu-button
+{
+	display: none;
+}
 #nav-div ul
 {
 	display: block;
@@ -81,8 +66,10 @@ body
 #nav-div ul li
 {
     float: left;
-    margin: 0 60px;
+	margin: 0 60px;
 }
+
+
 #nav-div ul li a
 {
     display: block;
@@ -104,6 +91,7 @@ body
 #nav-div ul li a:hover
 {
     color: #fff;
+	border-bottom: 1px solid #fff;
 }
 
 .nav-selected
@@ -115,7 +103,7 @@ body
 {
     width: 1100px;
 	min-height: 1000px;
-    margin: 0 auto 100px auto;
+    margin: 0 auto 100px;
 }
 
 
@@ -126,27 +114,25 @@ body
 {
 	position: relative;
 	width: 600px;
-	min-height: 300px;
     
     border: 0;
     border-radius: 20px;
 
 	background-color: #0af;
 
-	padding: 20px;
-    margin-top: 60px;
+    margin-top: 2em;
     
     font-family: 'Comfortaa', sans-serif;
 }
 
 .bubble:nth-child(even)
 {
-    left: 440px;
+    left: 30em;
 }
 
 .bubble header
 {
-    padding-bottom: 40px;
+    padding-bottom: 1em;
 }
 
 .bubble header figure
@@ -176,7 +162,7 @@ body
 
 .bubble article p
 {
-    padding: 0 20px 20px;
+    margin: 0 2em 1em;
     
 	line-height: 24px;
 	text-align: justify;

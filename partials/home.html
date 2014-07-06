@@ -1,0 +1,19 @@
+<div class="bubble" ng-repeat="bubble in bubbles">
+    <header>
+        <figure><img ng-src="{{bubble.imageUrl}}"/></figure>
+        <h1>{{bubble.title}}</h1>
+        <aside>by {{bubble.author}} [{{bubble.when}}]</aside>
+    </header>
+    <article>
+        
+        <p>{{bubble.message}}</p>
+        <p>Another paragraph</p>
+        <p>Another paragraph</p>
+        <p>Another paragraph</p>
+        <p>Another paragraph</p>
+        
+        <aside>
+            <a href="#" class="showMore">--- More ---</More></a><a href="#" class="showLess" style="display: none">Show Less</a>
+        </aside>
+    </article>
+</div><!--end .bubble -->

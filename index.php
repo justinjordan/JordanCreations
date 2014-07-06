@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="jcApp">
 <head>
 	<title>JordanCreations</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
@@ -11,12 +11,24 @@
 	<link rel="stylesheet" type="text/css" href="enhanced.css"/>
 	<![endif]-->
 	
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
-	<script src="main.js"></script>
+	<script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
 </head>
 <body>
 
 <div id="wrapper-div">
+	<div id="mobile-nav">
+		<ul>
+			<li>News</li>
+			<li>Blog</li>
+			<li>Photos</li>
+			<li>Contact</li>
+			<li>About</li>
+		</ul>
+	</div>
+	
     <div id="top-div">
         
     </div>
@@ -28,46 +40,28 @@
         <div class="outer-center">
             <div class="inner-center">
                 <div id="nav-div">
-					<p>&#9776;</p>
+					<div id="mobile-menu-button"></div>
                     <ul>
-                        <li class="nav-selected"><a href="#">News</a></li>
+                        <li class="nav-selected"><a href="#home">News</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Photo</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
-                </div><!-- nav-div -->
-            </div><!-- inner-center -->
-        </div><!-- outer-center -->
+                </div><!--end #nav-div -->
+            </div><!--end .inner-center -->
+        </div><!--end .outer-center -->
         <div class="clear"></div>
-    </div><!-- separator-div -->
+    </div><!--end #separator-div -->
     
-	<div id="main-div">
-
-<?php
-    for($i = 0; $i < 5; $i++):
-?>
-		<div class="bubble">
-            <header>
-                <figure><img src="images/thumbnail.jpg"/></figure>
-                <h1>Synth Street</h1>
-                <aside>by Justin Jordan [3 months ago]</aside>
-            </header>
-            <article>
-                <p>Banh mi butcher master cleanse cornhole locavore jean shorts. Disrupt meh keffiyeh polaroid Kickstarter Echo Park Marfa deep v tote bag, single-origin coffee church-key kitsch gastropub. Locavore narwhal Schlitz bespoke, organic Tonx blog twee ennui. Narwhal lo-fi gentrify YOLO pour-over. Thundercats Echo Park letterpress, small batch keytar butcher salvia next level Shoreditch. Austin umami fanny pack mlkshk next level, swag YOLO church-key. Hella locavore keffiyeh crucifix American Apparel, typewriter whatever letterpress aesthetic XOXO skateboard.</p>
-
-    <p>Synth street art polaroid iPhone Pinterest, ugh Cosby sweater fingerstache Pitchfork chia Tumblr next level pickled 8-bit. Gluten-free crucifix trust fund, art party umami Vice paleo sriracha. Banksy Cosby sweater small batch, YOLO shabby chic freegan mixtape fingerstache Pinterest lo-fi 3 wolf moon letterpress cliche bitters tattooed. Intelligentsia Thundercats seitan leggings quinoa you probably haven't heard of them. Single-origin coffee beard Odd Future swag jean shorts, church-key Godard. Typewriter crucifix asymmetrical Thundercats hashtag whatever, salvia tofu ethical brunch Cosby sweater organic. Gentrify Thundercats tattooed Blue Bottle, chia raw denim Echo Park pug.</p>
-            </article>
-		</div><!-- bubble -->
-<?php
-    endfor;
-?>
-
-	</div><!-- main-div -->
+    <!-- Main view -->
+	<div id="main-div" ng-view></div>
+    
+    <!-- Footer -->
     <div id="footer-div">
         
-    </div><!-- footer-div -->
-</div><!-- wrapper-div -->
-
+    </div><!--end #footer-div -->
+</div><!--end #wrapper-div -->
+    
 </body>
 </html>
