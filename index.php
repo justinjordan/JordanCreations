@@ -13,25 +13,25 @@
 	
 	<script src="angular.min.js"></script>
     <script src="angular-route.min.js"></script>
-    <script src="app.js"></script>
     <script src="controllers.js"></script>
+    <script src="app.js"></script>
 </head>
-<body>
+<body ng-controller="mainCtrl">
 
 <div id="wrapper-div">
-	<div id="mobile-nav">
+	<div id="mobile-nav" ng-show="mobile_menu" ng-click="hideMenu()">
 		<ul>
-			<li>News</li>
-			<li>Blog</li>
-			<li>Photos</li>
-			<li>Contact</li>
-			<li>About</li>
+			<li><a href="#home">News</a></li>
+			<li><a href="#blog">Blog</a></li>
+			<li><a href="#photo">Photo</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#about">About</a></li>
 		</ul>
 	</div>
 	
     <div id="top-div">
-        
     </div>
+    
     <div id="head-div">
         <img src="images/logo.gif"/>
     </div>
@@ -40,13 +40,13 @@
         <div class="outer-center">
             <div class="inner-center">
                 <div id="nav-div">
-					<div id="mobile-menu-button"></div>
-                    <ul>
-                        <li class="nav-selected"><a href="#home">News</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Photo</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#about">About</a></li>
+					<div id="mobile-menu-button" ng-click="showMenu()"></div>
+                    <ul ng-controller="navCtrl">
+                        <li ng-class="navClass('home')"><a href="#home">News</a></li>
+                        <li ng-class="navClass('blog')"><a href="#blog">Blog</a></li>
+                        <li ng-class="navClass('photo')"><a href="#photo">Photo</a></li>
+                        <li ng-class="navClass('contact')"><a href="#contact">Contact</a></li>
+                        <li ng-class="navClass('about')"><a href="#about">About</a></li>
                     </ul>
                 </div><!--end #nav-div -->
             </div><!--end .inner-center -->

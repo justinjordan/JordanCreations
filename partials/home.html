@@ -1,4 +1,4 @@
-<div class="bubble" ng-repeat="bubble in bubbles">
+<div class="bubble" ng-animate="'animate'" ng-repeat="bubble in bubbles">
     <header>
         <figure><img ng-src="{{bubble.imageUrl}}"/></figure>
         <h1>{{bubble.title}}</h1>
@@ -6,14 +6,10 @@
     </header>
     <article>
         
-        <p>{{bubble.message}}</p>
-        <p>Another paragraph</p>
-        <p>Another paragraph</p>
-        <p>Another paragraph</p>
-        <p>Another paragraph</p>
+        <p>{{bubble.message | limitTo:bubble.char_limit}}<span ng-show="bubble.char_limit<bubble.message.length">.......</span></p>
         
         <aside>
-            <a href="#" class="showMore">--- More ---</More></a><a href="#" class="showLess" style="display: none">Show Less</a>
+            <a ng-show="bubble.char_limit<bubble.message.length" ng-click="bubble.char_limit=bubble.char_limit+10000">Read More</a>
         </aside>
     </article>
 </div><!--end .bubble -->
