@@ -59,7 +59,7 @@
     
     <!-- Footer -->
     <div id="footer-div">
-        
+        <p>&copy;Copyright 2014 by Justin Jordan</p>
     </div><!--end #footer-div -->
 </div><!--end #wrapper-div -->
     
