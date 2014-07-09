@@ -6,10 +6,10 @@
     </header>
     <article>
         
-        <p>{{bubble.message | limitTo:bubble.char_limit}}<span ng-show="bubble.char_limit<bubble.message.length">.......</span></p>
+        <p>{{bubble.limited_msg}}</p>
         
         <aside>
-            <a ng-show="bubble.char_limit<bubble.message.length" ng-click="bubble.char_limit=bubble.char_limit+10000">Read More</a>
+            <a ng-show="bubble.limited_msg!=bubble.message" ng-click="bubble.limited_msg = bubble.message">Read More</a>
         </aside>
     </article>
 </div><!--end .bubble -->

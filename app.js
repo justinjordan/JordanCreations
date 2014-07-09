@@ -2,6 +2,7 @@
     
     var jcApp = angular.module('jcApp', [
         'ngRoute',
+        'ngAnimate',
         'jcControllers'
     ]);
 

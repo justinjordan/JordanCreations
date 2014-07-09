@@ -13,6 +13,7 @@
 	
 	<script src="angular.min.js"></script>
     <script src="angular-route.min.js"></script>
+    <script src="angular-animate.min.js"></script>
     <script src="controllers.js"></script>
     <script src="app.js"></script>
 </head>
@@ -55,7 +56,7 @@
     </div><!--end #separator-div -->
     
     <!-- Main view -->
-	<div id="main-div" ng-view></div>
+	<div id="main-div" class="{{pageClass}}" ng-view></div>
     
     <!-- Footer -->
     <div id="footer-div">
