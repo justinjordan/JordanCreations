@@ -31,9 +31,6 @@
     /*  == HOME Controller ==  */
     jcControllers.controller('homeCtrl', function($scope){
         
-        /*  == View style class ==  */
-        $scope.pageClass = 'page-home';
-        
         /*  == Initial amount of words to display for each bubble ==  */
         $scope.word_limit = 100;
         
@@ -111,17 +108,11 @@
     /*  == BLOG Controller ==  */
     jcControllers.controller('blogCtrl', function($scope){
         
-        /*  == View style class ==  */
-        $scope.pageClass = 'page-blog';
-        
         $scope.message = 'This is the blog page.';
     });
     
     /*  == PHOTO Controller ==  */
     jcControllers.controller('photoCtrl', function($scope){
-        
-        /*  == View style class ==  */
-        $scope.pageClass = 'page-photo';
         
         $scope.message = 'This is the photo page.';
     });
@@ -129,17 +120,11 @@
     /*  == CONTACT Controller ==  */
     jcControllers.controller('contactCtrl', function($scope){
         
-        /*  == View style class ==  */
-        $scope.pageClass = 'page-contact';
-        
         $scope.message = 'This is the contact page.';
     });
     
     /*  == ABOUT Controller ==  */
     jcControllers.controller('aboutCtrl', function($scope){
-        
-        /*  == View style class ==  */
-        $scope.pageClass = 'page-about';
         
         $scope.message = 'This is the about page.';
     });
