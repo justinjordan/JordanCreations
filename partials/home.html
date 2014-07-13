@@ -6,10 +6,12 @@
     </header>
     <article>
         
-        <p>{{bubble.limited_msg}}</p>
-        
-        <aside>
-            <a ng-show="bubble.limited_msg!=bubble.message" ng-click="bubble.limited_msg = bubble.message">Read More</a>
-        </aside>
+        <p>
+            {{bubble.limited_msg}}
+            <span ng-show="bubble.limited_msg!=bubble.message">
+                <a class="read_more" ng-click="bubble.limited_msg = bubble.message">Read More</a>
+            </span>
+        </p>
+
     </article>
 </div><!--end .bubble -->
