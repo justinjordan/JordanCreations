@@ -6,11 +6,12 @@
     </header>
     <article>
         
-        <p>
-            {{bubble.limited_msg}}
-            <span ng-show="bubble.limited_msg!=bubble.message">
-                <a class="read_more" ng-click="bubble.limited_msg = bubble.message">Read More</a>
-            </span>
+        <p ng-if="!bubble.showAll">
+            {{ limitWords(bubble.message, wordLimit) }}
+            <a class="read_more" ng-click="bubble.showAll = true" ng-hide="countWords(bubble.message) < wordLimit">Read More</a>
+        </p>
+        <p ng-if="bubble.showAll">
+            {{ bubble.message }}
         </p>
 
     </article>

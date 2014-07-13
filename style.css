@@ -225,9 +225,10 @@ h1
     position: relative;
     top: 60px;
     
+    color: #777;
     text-align: center;
     letter-spacing: 2px;
     font-size: 10pt;
-    text-shadow: 0 1px 0 #555;
+    text-shadow: 0 1px 0 #000;
 }
 
