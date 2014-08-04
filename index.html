@@ -21,11 +21,11 @@
 <div id="wrapper-div">
 	<div id="mobile-nav" ng-show="mobile_menu" ng-click="hideMenu()">
 		<ul>
-			<li><a href="#home">News</a></li>
 			<li><a href="#blog">Blog</a></li>
+			<li><a href="#music">Music</a></li>
 			<li><a href="#photo">Photo</a></li>
-			<li><a href="#contact">Contact</a></li>
 			<li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
 		</ul>
 	</div>
 	
@@ -37,21 +37,19 @@
     </div>
     
     <div id="separator-div">
-        <div class="outer-center">
-            <div class="inner-center">
-                <div id="nav-div">
-					<div id="mobile-menu-button" ng-click="showMenu()"></div>
-                    <ul ng-controller="navCtrl">
-                        <li ng-class="navClass('home')"><a href="#home">News</a></li>
-                        <li ng-class="navClass('blog')"><a href="#blog">Blog</a></li>
-                        <li ng-class="navClass('photo')"><a href="#photo">Photo</a></li>
-                        <li ng-class="navClass('contact')"><a href="#contact">Contact</a></li>
-                        <li ng-class="navClass('about')"><a href="#about">About</a></li>
-                    </ul>
-                </div><!--end #nav-div -->
-            </div><!--end .inner-center -->
-        </div><!--end .outer-center -->
-        <div class="clear"></div>
+        <div id="nav-div">
+            <div id="mobile-menu-button" ng-click="showMenu()"></div>
+            <div class="container">
+                <ul id="main-nav" ng-controller="navCtrl">
+                    <li ng-class="navClass('blog')"><a href="#blog">Blog</a></li>
+                    <li ng-class="navClass('music')"><a href="#music">Music</a></li>
+                    <li ng-class="navClass('photo')"><a href="#photo">Photo</a></li>
+                    <li ng-class="navClass('about')"><a href="#about">About</a></li>
+                    <li ng-class="navClass('contact')"><a href="#contact">Contact</a></li>
+
+                </ul>
+            </div>
+        </div><!--end #nav-div -->
     </div><!--end #separator-div -->
     
     <!-- Main view -->

@@ -28,21 +28,22 @@
         
     });
     
-    /*  == HOME Controller ==  */
-    jcControllers.controller('homeCtrl', function($scope, $http){
+    /*  == BLOG Controller ==  */
+    jcControllers.controller('blogCtrl', function($scope, $http){
         
-        $http.get('data/news.json')
+        $scope.blogPosts = [];
+        
+        $http.get('data/blog.json')
             .success(function(data, status, headers, config){
-                $scope.bubbles = data;    
+                $scope.blogPosts = data;    
             })
             .error(function(data, status, headers, config){
-                alert('error');
                 /**************************
                 ** TODO:  error handling **
                 **************************/
             });
                 
-        /*  == Initial amount of words to display for each bubble ==  */
+        /*  == Initial amount of words to display for each blogPost ==  */
         $scope.wordLimit = 100;
         
         /*  == countWords = self explanatory ==  */
@@ -86,10 +87,20 @@
         /*  == END. limitWords ==  */
     });
 
-    /*  == BLOG Controller ==  */
-    jcControllers.controller('blogCtrl', function($scope){
+    /*  == MUSIC Controller ==  */
+    jcControllers.controller('musicCtrl', function($scope, $http){
+
+        $scope.musicPosts = [];
         
-        $scope.message = 'This is the blog page.';
+        $http.get('data/music.json')
+            .success(function(data, status, headers, config){
+                $scope.musicPosts = data;
+            })
+            .error(function(data, status, headers, config){
+                /**************************
+                ** TODO:  error handling **
+                **************************/
+            });
     });
     
     /*  == PHOTO Controller ==  */
@@ -98,16 +109,16 @@
         $scope.message = 'This is the photo page.';
     });
     
-    /*  == CONTACT Controller ==  */
-    jcControllers.controller('contactCtrl', function($scope){
-        
-        $scope.message = 'This is the contact page.';
-    });
-    
     /*  == ABOUT Controller ==  */
     jcControllers.controller('aboutCtrl', function($scope){
         
         $scope.message = 'This is the about page.';
+    });
+    
+    /*  == CONTACT Controller ==  */
+    jcControllers.controller('contactCtrl', function($scope){
+        
+        $scope.message = 'This is the contact page.';
     });
     
 })();

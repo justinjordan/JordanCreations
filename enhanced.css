@@ -1,6 +1,12 @@
+.container
+{
+    width: 1100px;
+    margin: 0 auto;
+}
+
 #wrapper-div
 {
-    min-width: 80em;
+    min-width: 1280px;
 }
 
 #top-div
@@ -15,29 +21,32 @@
 
 #head-div
 {
-    height: 6em;
+    height: 100px;
 }
 
 #head-div img
 {    
-    left: 3em;
-    top: 2em;
+    left: 50px;
+    top: 32px;
 }
 
 #mobile-menu-button
 {
 	display: none;
 }
+
 #nav-div ul
 {
 	display: block;
 	
     height: 40px;
+    
+    margin: 0 auto;
 }
 #nav-div ul li
 {
     float: left;
-	margin: 0 60px;
+	margin: 0 20px 0 0;
 }
 
 
@@ -79,33 +88,37 @@
 
 
 
-/*  BUBBLE  */
+/*  blogPost  */
 
-.bubble
+.blogPost
 {
-	width: 600px;
-        
-    margin-top: 2em;
+    width: 600px;
+    
+    margin: 30px 0;
 }
 
-.bubble:nth-child(even)
+.blogPost:nth-child(even)
 {
-    left: 30em;
+    /*  Used instead of "float: right"  */
+    /*  Far less glitchy  */
+    
+    margin-left: auto;
+    margin-right: 0;
 }
 
-.bubble header figure
+.blogPost header figure
 {
-    padding-right: 1em;
+    padding-right: 10px;
 }
 
-.bubble header aside
+.blogPost header aside
 {    
     letter-spacing: 2px;
 }
 
-.bubble article p
+.blogPost article p
 {
-    margin: 0 2em 1em;
+    margin: 0 32px 16px;
     
 	line-height: 24px;
 	text-align: justify;
@@ -115,7 +128,23 @@
     letter-spacing: 1px;
 }
 
-/*  BUBBLE END  */
+.musicPost
+{
+    width: 600px;
+    
+    margin: 30px 0;
+}
+
+.musicPost:nth-child(even)
+{
+    /*  Used instead of "float: right"  */
+    /*  Far less glitchy  */
+    
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/*  blogPost END  */
 
 #footer-div
 {

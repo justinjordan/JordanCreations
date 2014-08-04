@@ -1,0 +1,10 @@
+<div class="musicPost" ng-repeat="musicPost in musicPosts">
+    <header>
+        <h1>{{musicPost.title}}</h1>
+        <aside>by {{musicPost.author}}</aside>
+    </header>
+    <p>
+        <img ng-src="{{musicPost.imageUrl}}"/>
+        {{musicPost.description}}
+    </p>
+</div><!--end .musicPost -->

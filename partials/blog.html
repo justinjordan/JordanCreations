@@ -1,2 +1,18 @@
-<h1>BLOG</h1>
-<p>{{message}}</p>
+<div class="blogPost" ng-repeat="blogPost in blogPosts">
+    <header>
+        <figure><img ng-src="{{blogPost.imageUrl}}"/></figure>
+        <h1>{{blogPost.title}}</h1>
+        <aside>by {{blogPost.author}} [{{blogPost.when}}]</aside>
+    </header>
+    <article>
+
+        <p ng-if="!blogPost.showAll">
+            {{ limitWords(blogPost.message, wordLimit) }}
+            <a class="read_more" ng-click="blogPost.showAll = true" ng-hide="countWords(blogPost.message) < wordLimit">Read More</a>
+        </p>
+        <p ng-if="blogPost.showAll">
+            {{ blogPost.message }}
+        </p>
+
+    </article>
+</div><!--end .blogPost -->

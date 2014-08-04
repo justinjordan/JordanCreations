@@ -8,14 +8,14 @@
     jcApp.config(['$routeProvider', function($routeProvider){
         $routeProvider.
 
-            when('/home', {
-                templateUrl: 'partials/home.html',
-                controller: 'homeCtrl'
-            }).
-        
             when('/blog', {
                 templateUrl: 'partials/blog.html',
                 controller: 'blogCtrl'
+            }).
+        
+            when('/music', {
+                templateUrl: 'partials/music.html',
+                controller: 'musicCtrl'
             }).
         
             when('/photo', {
@@ -23,18 +23,18 @@
                 controller: 'photoCtrl'
             }).
         
+            when('/about', {
+                templateUrl: 'partials/about.html',
+                controller: 'aboutCtrl'
+            }).
+        
             when('/contact', {
                 templateUrl: 'partials/contact.html',
                 controller: 'contactCtrl'
             }).
 
-            when('/about', {
-                templateUrl: 'partials/about.html',
-                controller: 'aboutCtrl'
-            }).
-
             otherwise({
-                redirectTo: '/home'
+                redirectTo: '/blog'
             });
     }]);
     
