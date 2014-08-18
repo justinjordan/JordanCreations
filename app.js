@@ -1,10 +1,10 @@
 (function(){
-    
+        
     var jcApp = angular.module('jcApp', [
         'ngRoute',
         'jcControllers'
     ]);
-
+    
     jcApp.config(['$routeProvider', function($routeProvider){
         $routeProvider.
 

@@ -16,18 +16,9 @@
     <script src="controllers.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-controller="mainCtrl">
+<body ng-controller="mainCtrl" ng-class="{'no_scroll' : !scrolling}">
 
 <div id="wrapper-div">
-	<div id="mobile-nav" ng-show="mobile_menu" ng-click="hideMenu()">
-		<ul>
-			<li><a href="#blog">Blog</a></li>
-			<li><a href="#music">Music</a></li>
-			<li><a href="#photo">Photo</a></li>
-			<li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-		</ul>
-	</div>
 	
     <div id="top-div">
     </div>
@@ -52,8 +43,22 @@
         </div><!--end #nav-div -->
     </div><!--end #separator-div -->
     
-    <!-- Main view -->
-	<div id="main-div" ng-view></div>
+	<div id="main-container">
+        <div id="mobile-nav" ng-show="mobile_menu" ng-click="hideMenu()">
+            <ul>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#photo">Photo</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div><!--end #mobile-nav -->
+        
+        <!-- AngularJS View -->
+        <div id="main-div" ng-view></div>
+        <!-- End of View -->
+        
+    </div><!--end #main-container -->
     
     <!-- Footer -->
     <div id="footer-div">

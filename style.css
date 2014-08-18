@@ -11,6 +11,11 @@ body
 	font-weight: 400;
 }
 
+.no_scroll
+{
+    overflow: hidden;
+}
+
 h1
 {
     font-size: 160%;
@@ -20,11 +25,13 @@ h1
 #mobile-nav
 {
 	position: fixed;
+    left: 0;
+    top: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 999;
 	
-	background-color: #0af;
+	background-color: #0070cc;
 }
 #mobile-nav ul
 {
@@ -34,11 +41,7 @@ h1
 {
 	font-size: 200%;
 	letter-spacing: 2px;
-	margin-bottom: 20px;
-}
-#mobile-nav li:nth-child(even)
-{
-	margin-left: 24px;
+	margin-bottom: 40px;
 }
 #mobile-nav a
 {
@@ -74,6 +77,8 @@ h1
     background: #0070cc url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAIAAABxU02MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFCNzZFN0JFQTkyMjExRTI5Q0RERjlGMEUwRDU1MjQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFCNzZFN0JGQTkyMjExRTI5Q0RERjlGMEUwRDU1MjQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUI3NkU3QkNBOTIyMTFFMjlDRERGOUYwRTBENTUyNDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUI3NkU3QkRBOTIyMTFFMjlDRERGOUYwRTBENTUyNDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5AlXZ6AAAAfklEQVR42uRVQQ7AIAgrif8/77EgQ9wHVg7E6KHhUpE2VMFjgABO4MA0irgwyVG6EzhgQSZPdpa86T/uZ1c6F9SeYOUOstY6U2oFhlW6qukEVmc2duTPqia127bqVJ+1bauKYcCrvTs7CNzped1WnZmeV/pc/WLbyGxuvwIMAMRj50Kj2MI1AAAAAElFTkSuQmCC) repeat-x;
     
     height: 40px;
+    
+    margin: 0;
 }
 
 #mobile-menu-button
@@ -98,10 +103,130 @@ h1
 {
 	min-height: 1000px;
 	width: 90%;
-    margin: 0 auto 100px;
+    margin: 40px auto 100px;
     
     color: #fff;
 }
+
+/*  userProfile  */
+
+.blackout
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-color: #000;
+    opacity: 1;
+    
+    z-index: -9999;
+}
+.window
+{
+    width: 100%;
+    height: 100%;
+        
+    border: 0;
+    border-radius: 20px;
+    
+    background-color: #0af;
+    
+    font-family: 'Comfortaa', sans-serif;
+	text-shadow: 0 1px 0 #abf;
+    
+    color: #000;
+}
+.window-spinner
+{
+    width: 31px;
+    height: 31px;
+    margin: 215px auto;
+    background: url("images/window-spinner.gif") no-repeat;
+}
+.window-container
+{
+    padding: 16px;
+}
+
+.window-close
+{
+    float: right;
+    
+    z-index: 9999;
+    
+    cursor: pointer;
+}
+
+#userProfile
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    z-index: 9999;
+    
+    letter-spacing: 2px;
+
+}
+
+#userProfile a
+{
+    text-decoration: none;
+    color: #000;
+    
+    border-bottom: 1px dotted #000;
+}
+
+#userData header figure
+{
+    float: left;
+    
+    margin-right: 12px;
+}
+
+#userData header figure img
+{
+    border-radius: 10px;
+}
+
+#userData header aside
+{
+    position: relative;
+    
+    left: 10px;
+    margin-top: 6px;
+}
+#userData header aside a
+{
+    font-size: 10pt;
+}
+
+#userData article
+{
+    overflow-y: scroll;
+    height: 380px;
+    
+    margin: 20px;
+    
+    text-align: justify;
+    line-height: 150%;
+    text-indent: 40px;
+}
+
+#userData article p
+{
+    margin-bottom: 10px;
+    
+    font-size: 10pt;
+}
+/*  userProfile end  */
+
 
 /*  blogPost  */
 
@@ -167,6 +292,18 @@ h1
     letter-spacing: 1px;
 }
 
+.blogPost header aside a
+{
+    cursor: pointer;
+    
+    text-decoration: underline;
+}
+
+.blogPost article
+{
+    border-bottom: 1px dashed #55c;
+}
+
 .blogPost article p
 {
     margin: 0 32px 16px;
@@ -182,6 +319,21 @@ h1
 .blogPost article aside
 {
     margin-top: 16px;
+}
+
+.blogPost footer
+{
+    margin: 18px 64px;
+}
+
+.blogPost footer ul li
+{
+    float: left;
+    margin-right: 20px;
+    
+    font-size: 10pt;
+    
+    cursor: pointer;
 }
 
 .read_more
@@ -259,7 +411,8 @@ h1
 
     border-radius: 10px;
     
-    width: 200px;
+    max-width: 200px;
+    width: 40%;
     height: auto;
 }
 

@@ -1,50 +1,52 @@
 <?php
 
+/* Connection.php */
+
 class Connection
 {
-    /*  Singleton Instance  */
-    public static function Instance( $host, $user, $pass, $db )
-    {
-        static $inst = null;
-        if ( $inst === null )
-        {
-            $inst = new Connection( $host, $user, $pass, $db );
-        }
-        
-        return $inst;
-    }
-    /* End of Instance */
     
-    
-    public $link;
+    public $connection;
     
     /* Constructor and Deconstructor */
-    private __construct( $host, $user, $pass, $db )
+    public function __construct( $host, $user, $pass, $db )
     {
-        $this->link = new mysqli( $host, $user, $pass, $db );
+        $this->connection = new mysqli( $host, $user, $pass, $db );
     }
     
-    private __destruct()
+    public function __destruct()
     {
-        $this->link->close();
+        $this->connection->close();
     }
     /* end */
     
     
     /* Shortcut to query function */
-    /* Returns Result */
-    public function query( $query )
-    {
-        $clean = sanitize( $query );
+    /* Returns 2d Array of rows */
+    public function Query( $query )
+    {        
+        $output = array();
         
-        return $this->link->query( $clean );
+        if ( $result = $this->connection->query( $query ) )
+        {
+            while ( $row = $result->fetch_assoc() )
+            {
+                array_push( $output, $row );
+            }
+            
+            return $output;
+        }
+        else
+        {
+            return false;
+        }
+
     }
     /* End of Shortcut */
     
-    /* Sanitize queries */
-    public function sanitize( $query )
+    /* Clean queries */
+    public function Clean( $query )
     {
-        /* Check if PHP auto-sanitize function is enabled */
+        /* Check if PHP auto-sanitize is enabled */
         if ( get_magic_quotes_gpc() )
         {
             return $query;
@@ -52,9 +54,9 @@ class Connection
         /* Otherwise proceed with sanitation */
         else
         {
-            return $this->link->real_escape_string( $query );
+            return $this->connection->real_escape_string( $query );
         }
     }
-    /* End of Sanitize */
+    /* End of Clean */
 
-?>
+}
