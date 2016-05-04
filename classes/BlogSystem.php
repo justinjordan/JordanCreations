@@ -30,7 +30,7 @@ class BlogSystem
         $user = $this->user_table;
         
         /* Select blog posts and corrisponding user info */
-        $query = "SELECT $blog.blog_id, $blog.blog_author, $blog.blog_title, $blog.blog_date, $blog.blog_message, $user.user_handle, $user.user_name, $user.user_image FROM blog LEFT JOIN user ON $user.user_handle=$blog.blog_author ORDER BY $blog.blog_id DESC LIMIT $i, $amount";
+        $query = "SELECT $blog.blog_id, $blog.blog_author, $blog.blog_title, $blog.blog_date, $blog.blog_message, $user.user_handle, $user.user_name, $user.user_thumbnail FROM blog LEFT JOIN user ON $user.user_handle=$blog.blog_author ORDER BY $blog.blog_id DESC LIMIT $i, $amount";
         
         if ($result = $this->link->Query($query))
         {

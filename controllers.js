@@ -2,11 +2,56 @@
 
     var jcControllers = angular.module('jcControllers', []);
 
-    jcControllers.run(function($rootScope){
+    jcControllers.run(function($rootScope, $http){
         
         // Enable/Disable Scrolling
         $rootScope.scrolling = true;
         
+        // Login Controls
+        $rootScope.login = {
+            view: false,
+            logged_in: false
+        };
+        
+        $rootScope.showLoginDialog = function() {
+            $rootScope.login.view = true;
+            $rootScope.scrolling = false;
+        };
+        
+        $rootScope.hideLoginDialog = function() {
+            $rootScope.login.view = false;
+            $rootScope.scrolling = true;
+        };
+        
+        $rootScope.SignIn = function(user, pass) {
+            $http({
+                method: 'get',
+                url: 'data/login.php',
+                params: {
+                    user: user,
+                    pass: pass
+                }
+            })
+                .success(function(data, status, headers, config) {
+
+                    if ( data.success )
+                    {                        
+                        $rootScope.login.logged_in = true;
+                        
+                        $rootScope.hideLoginDialog();
+                    }
+                    else
+                    {
+                        alert('Username/Password Incorrect!');
+                    }
+                })
+                .error(function(data, status, headers, config) {
+                    
+                    alert('Error!');
+                    
+                });
+            
+        };
     });
     
     /*  == MAIN Controller ==  */

@@ -8,7 +8,7 @@ class Bcrypt
 	{
 		$salt = substr($hash, 0, 29);
 		$newHash = self::CreateHash($pass, $salt);
-		
+        
 		return $newHash == $hash;
 	}
 	

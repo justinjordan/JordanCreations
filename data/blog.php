@@ -1,13 +1,15 @@
 <?php
 
+/* data/blog.php */
+
 /* Load Dependencies */
+require_once('../classes/mysqlinfo.php');
 require_once('../classes/Connection.php');
 require_once('../classes/BlogSystem.php');
 
 /* Create API Class Objects */
-$link = new Connection('localhost', 'root', 'root', 'jordancreations');
+$link = new Connection( MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB );
 $blog = new BlogSystem($link);
-
 
 /* Retrieve GET Data */
 $i = 0;
@@ -26,57 +28,36 @@ if ( isset($_GET['num']) )
 function formatText($input)
 {
     $replace = '[br]';
-    
     $msg = trim(preg_replace('/\s\s+/', $replace, $input));
     
-    return explode($replace, $msg);
+    $paragraphs = explode($replace, $msg);
+    $output = array();
+    
+    for ( $i = 0; $i < count($paragraphs); $i++ )
+    {
+        array_push($output, array('text' => $paragraphs[$i]) );
+    }
+    
+    return $output;
 }
 
 if ($posts = $blog->GetPosts($i, $num))
 {
+    $output = array();
     
-    echo '['; // open array
-
     for ( $i = 0; $i < count($posts); $i++ )
     {
-        echo '{'; // open object
-        echo '"id":"'. $posts[$i]['blog_id'] .'",';
-        echo '"title":"'. $posts[$i]['blog_title'] .'",';
-        echo '"handle":"'. $posts[$i]['user_handle'] .'",';
-        echo '"author":"'. $posts[$i]['user_name'] .'",';
-        echo '"imageUrl":"'. $posts[$i]['user_image'] .'",';
-        echo '"when":"' . $posts[$i]['blog_date'] . '",';
-        
-        echo '"paragraphs":';
-        
-        $message = $posts[$i]['blog_message'];
-        $paragraphs = formatText($message);
-        
-        echo '[';
-        for ( $j = 0; $j < count($paragraphs); $j++ )
-        {
-            echo '{"text":"'. $paragraphs[$j] .'"';
-            
-            if ( $j < count($paragraphs)-1 )
-            {
-                echo '},';
-            }
-        }
-        echo '}]';
-        
-        echo '}'; // close object
-
-        if ( $i < count($posts)-1 )
-        {
-            echo ',';
-        }
+        array_push( $output, array(
+            'id' => $posts[$i]['blog_id'],
+            'title' => $posts[$i]['blog_title'],
+            'handle' => $posts[$i]['user_handle'],
+            'author' => $posts[$i]['user_name'],
+            'thumbnail' => $posts[$i]['user_thumbnail'],
+            'when' => $posts[$i]['blog_date'],
+            'paragraphs' => formatText($posts[$i]['blog_message'])
+        ));
     }
-
-    echo ']'; // close array
     
-}
-else
-{
-    /*  TODO:  Remove from Production Deployment  */
-    //echo $link->connection->error;
+    echo json_encode($output);
+
 }

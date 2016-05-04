@@ -3,11 +3,12 @@
 /* data/user.php */
 
 /* Load Dependencies */
+require_once('../classes/mysqlinfo.php');
 require_once('../classes/Connection.php');
 require_once('../classes/UserSystem.php');
 
 /* Create API Class Objects */
-$link = new Connection('localhost', 'root', 'root', 'jordancreations');
+$link = new Connection( MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB );
 $userSystem = new UserSystem($link);
 
 /* Retrieve GET Data */

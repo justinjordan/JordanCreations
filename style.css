@@ -7,7 +7,7 @@
 body
 {
 	background-color: #000;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Comfortaa', sans-serif;
 	font-weight: 400;
 }
 
@@ -52,6 +52,41 @@ h1
 #top-div
 {
 	display: none;
+    
+    padding: 0 20px;
+}
+
+#top-div p
+{
+    line-height: 40px;
+    vertical-align: middle;
+    
+    color: #bbb;
+    font-size: 8pt;
+    letter-spacing: 2px;
+}
+
+#top-div a
+{
+    cursor: pointer;
+    
+    color: #ddd;
+    text-transform: lowercase;
+}
+#top-div a:hover
+{
+    color: #fff;
+}
+
+.user-panel ul li
+{
+    float: left;
+}
+
+#login-window form
+{
+    float: left;
+    margin: 40px auto auto 40px;
 }
 
 #head-div
@@ -160,7 +195,7 @@ h1
     cursor: pointer;
 }
 
-#userProfile
+.overlay
 {
     position: fixed;
     left: 0;
@@ -170,53 +205,58 @@ h1
     height: 100%;
     
     z-index: 9999;
-    
-    letter-spacing: 2px;
-
 }
 
-#userProfile a
+#userProfile
 {
+    letter-spacing: 2px;
+}
+
+#userData header
+{
+    margin-bottom: 20px;
+}
+#userData header h1
+{
+    text-align: center;
+}
+#userData header aside
+{
+    text-align: center;
+    
+    margin-top: 6px;
+}
+#userData header aside a
+{
+    font-size: 10pt;
+    
     text-decoration: none;
     color: #000;
     
     border-bottom: 1px dotted #000;
 }
 
-#userData header figure
+#userData article
+{
+    position: absolute;
+    top: 80px; right: 10px; bottom: 20px; left: 10px;
+    
+    overflow: auto;
+}
+
+#userData article figure
 {
     float: left;
     
-    margin-right: 12px;
+    margin-right: 20px;
 }
 
-#userData header figure img
-{
+#userData article figure img
+{   
     border-radius: 10px;
-}
-
-#userData header aside
-{
-    position: relative;
     
-    left: 10px;
-    margin-top: 6px;
-}
-#userData header aside a
-{
-    font-size: 10pt;
-}
-
-#userData article
-{
-    overflow-y: scroll;
-    height: 380px;
-    
-    margin: 20px;
-    
-    text-align: justify;
-    line-height: 150%;
-    text-indent: 40px;
+    width: 300px;
+    height: auto;
 }
 
 #userData article p
@@ -224,6 +264,9 @@ h1
     margin-bottom: 10px;
     
     font-size: 10pt;
+    text-align: justify;
+    line-height: 150%;
+    text-indent: 40px;
 }
 /*  userProfile end  */
 
@@ -276,7 +319,7 @@ h1
 	position: relative;
 	top: 3px;
 	
-	font-size: 110%;
+	font-size: 100%;
     letter-spacing: 2px;
 }
 
@@ -306,7 +349,7 @@ h1
 
 .blogPost article p
 {
-    margin: 0 32px 16px;
+    margin: 0 32px 10px;
     
 	line-height: 150%;
 	text-align: justify;
@@ -344,11 +387,15 @@ h1
     font-size: 8pt;
     text-shadow: none;
     
-    color: #049;
+    color: #003e6d;
     
     text-align: center;
     
     cursor: pointer;
+}
+.read_more:hover
+{
+    color: #007cd1;
 }
 
 /*  blogPost END  */

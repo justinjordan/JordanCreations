@@ -1,6 +1,6 @@
 <div class="blogPost" ng-repeat="blogPost in blogPosts">
     <header>
-        <figure><img ng-src="{{ blogPost.imageUrl }}"/></figure>
+        <figure><img ng-src="{{ blogPost.thumbnail }}"/></figure>
         <h1>{{ blogPost.title }}</h1>
         <aside>by <a ng-click="loadProfile(blogPost.handle)">{{ blogPost.author }}</a> [{{ dateToUtc(blogPost.when) | date : 'MMM d, yyyy @ h:mm a'}}]</aside>
     </header>
@@ -24,23 +24,28 @@
     </footer>
 </div><!--end .blogPost -->
 
-<div id="userProfile" ng-show="profile.view">
+<div class="overlay" id="userProfile" ng-show="profile.view">
     <div class="blackout" ng-click="closeProfile()"></div>
-    <div class="window">
+    <div id="profile-window" class="window">
         <div class="window-container">
             <div class="window-close" ng-click="closeProfile()">X</div>
             <div class='window-spinner' ng-if="profile.loading"></div>
             <div id="userData" ng-if="!profile.loading">
                 <header>
-                    <figure><img ng-src="{{profile.data.image}}"/></figure>
                     <h1>{{profile.data.name}}</h1>
-                    <aside><a href="mailto:{{ profile.data.email }}">{{ profile.data.email }}</a></aside>
+                    <aside>
+                        <a href="mailto:{{ profile.data.email }}">{{ profile.data.email }}</a>
+                    </aside>
                 </header>
                 <article>
+                    <figure><img ng-src="{{profile.data.image}}"/></figure>
+                    
                     <p>Sizzle metizzle get down get down, luctus et, crackalackin et, sollicitudin izzle, gizzle. Donizzle dang, nisi egestas facilisis malesuada, neque dizzle bow wow wow shizznit, crunk fringilla libero things izzle crackalackin. Dizzle mammasay mammasa mamma oo sa taciti sociosqu izzle litora torquent izzle conubia go to hizzle, pizzle mammasay mammasa mamma oo sa hymenizzle. Aliquam mauris mah nizzle, scelerisque fo shizzle mah nizzle fo rizzle, mah home g-dizzle, iaculizzle dope, bizzle fo shizzle my nizzle, shit. Break yo neck, yall lacus. Fusce velizzle pizzle, accumsan shizzlin dizzle, feugizzle fizzle, molestie boom shackalack, sapizzle. Fo you son of a bizzle. Aenean nizzle daahng dawg nizzle enizzle ghetto pharetra. Integizzle izzle felizzle, phat fo shizzle, elementizzle quis, mollis that's the shizzle, ligula. Maecenas izzle pede. You son of a bizzle nibh. Cool sizzle. Check it out blandizzle. Shut the shizzle up metus magna, semper sheezy, lobortis ut, molestie quizzle, cool. Morbi mi nibh, semper sed, dizzle things, pretium ac, velizzle. Doggy own yo' funky fresh its fo rizzle mammasay mammasa mamma oo sa tempizzle aliquizzle.</p>
+                    
                     <p>Sizzle metizzle get down get down, luctus et, crackalackin et, sollicitudin izzle, gizzle. Donizzle dang, nisi egestas facilisis malesuada, neque dizzle bow wow wow shizznit, crunk fringilla libero things izzle crackalackin. Dizzle mammasay mammasa mamma oo sa taciti sociosqu izzle litora torquent izzle conubia go to hizzle, pizzle mammasay mammasa mamma oo sa hymenizzle. Aliquam mauris mah nizzle, scelerisque fo shizzle mah nizzle fo rizzle, mah home g-dizzle, iaculizzle dope, bizzle fo shizzle my nizzle, shit. Break yo neck, yall lacus. Fusce velizzle pizzle, accumsan shizzlin dizzle, feugizzle fizzle, molestie boom shackalack, sapizzle. Fo you son of a bizzle. Aenean nizzle daahng dawg nizzle enizzle ghetto pharetra. Integizzle izzle felizzle, phat fo shizzle, elementizzle quis, mollis that's the shizzle, ligula. Maecenas izzle pede. You son of a bizzle nibh. Cool sizzle. Check it out blandizzle. Shut the shizzle up metus magna, semper sheezy, lobortis ut, molestie quizzle, cool. Morbi mi nibh, semper sed, dizzle things, pretium ac, velizzle. Doggy own yo' funky fresh its fo rizzle mammasay mammasa mamma oo sa tempizzle aliquizzle.</p>
+                    
                     <p>Sizzle metizzle get down get down, luctus et, crackalackin et, sollicitudin izzle, gizzle. Donizzle dang, nisi egestas facilisis malesuada, neque dizzle bow wow wow shizznit, crunk fringilla libero things izzle crackalackin. Dizzle mammasay mammasa mamma oo sa taciti sociosqu izzle litora torquent izzle conubia go to hizzle, pizzle mammasay mammasa mamma oo sa hymenizzle. Aliquam mauris mah nizzle, scelerisque fo shizzle mah nizzle fo rizzle, mah home g-dizzle, iaculizzle dope, bizzle fo shizzle my nizzle, shit. Break yo neck, yall lacus. Fusce velizzle pizzle, accumsan shizzlin dizzle, feugizzle fizzle, molestie boom shackalack, sapizzle. Fo you son of a bizzle. Aenean nizzle daahng dawg nizzle enizzle ghetto pharetra. Integizzle izzle felizzle, phat fo shizzle, elementizzle quis, mollis that's the shizzle, ligula. Maecenas izzle pede. You son of a bizzle nibh. Cool sizzle. Check it out blandizzle. Shut the shizzle up metus magna, semper sheezy, lobortis ut, molestie quizzle, cool. Morbi mi nibh, semper sed, dizzle things, pretium ac, velizzle. Doggy own yo' funky fresh its fo rizzle mammasay mammasa mamma oo sa tempizzle aliquizzle.</p>
-                    <p>Sizzle metizzle get down get down, luctus et, crackalackin et, sollicitudin izzle, gizzle. Donizzle dang, nisi egestas facilisis malesuada, neque dizzle bow wow wow shizznit, crunk fringilla libero things izzle crackalackin. Dizzle mammasay mammasa mamma oo sa taciti sociosqu izzle litora torquent izzle conubia go to hizzle, pizzle mammasay mammasa mamma oo sa hymenizzle. Aliquam mauris mah nizzle, scelerisque fo shizzle mah nizzle fo rizzle, mah home g-dizzle, iaculizzle dope, bizzle fo shizzle my nizzle, shit. Break yo neck, yall lacus. Fusce velizzle pizzle, accumsan shizzlin dizzle, feugizzle fizzle, molestie boom shackalack, sapizzle. Fo you son of a bizzle. Aenean nizzle daahng dawg nizzle enizzle ghetto pharetra. Integizzle izzle felizzle, phat fo shizzle, elementizzle quis, mollis that's the shizzle, ligula. Maecenas izzle pede. You son of a bizzle nibh. Cool sizzle. Check it out blandizzle. Shut the shizzle up metus magna, semper sheezy, lobortis ut, molestie quizzle, cool. Morbi mi nibh, semper sed, dizzle things, pretium ac, velizzle. Doggy own yo' funky fresh its fo rizzle mammasay mammasa mamma oo sa tempizzle aliquizzle.</p>
+                    
                     <p>Sizzle metizzle get down get down, luctus et, crackalackin et, sollicitudin izzle, gizzle. Donizzle dang, nisi egestas facilisis malesuada, neque dizzle bow wow wow shizznit, crunk fringilla libero things izzle crackalackin. Dizzle mammasay mammasa mamma oo sa taciti sociosqu izzle litora torquent izzle conubia go to hizzle, pizzle mammasay mammasa mamma oo sa hymenizzle. Aliquam mauris mah nizzle, scelerisque fo shizzle mah nizzle fo rizzle, mah home g-dizzle, iaculizzle dope, bizzle fo shizzle my nizzle, shit. Break yo neck, yall lacus. Fusce velizzle pizzle, accumsan shizzlin dizzle, feugizzle fizzle, molestie boom shackalack, sapizzle. Fo you son of a bizzle. Aenean nizzle daahng dawg nizzle enizzle ghetto pharetra. Integizzle izzle felizzle, phat fo shizzle, elementizzle quis, mollis that's the shizzle, ligula. Maecenas izzle pede. You son of a bizzle nibh. Cool sizzle. Check it out blandizzle. Shut the shizzle up metus magna, semper sheezy, lobortis ut, molestie quizzle, cool. Morbi mi nibh, semper sed, dizzle things, pretium ac, velizzle. Doggy own yo' funky fresh its fo rizzle mammasay mammasa mamma oo sa tempizzle aliquizzle.</p>
                 </article>
             </div>

@@ -1,11 +1,17 @@
 <?php
 
-/*  unit_test/BcryptTest.php  */
+/*  unit_test/BcryptWorkFactorTest.php  */
 
-if ( isset($_GET['iamauthorized']) ) // worst authentication ever!
+/* Load Dependencies */
+require_once('../classes/mysqlinfo.php');
+require_once('../classes/Connection.php');
+require_once('../classes/UserSystem.php'); // Includes Bcrypt Class
+
+$link = new Connection( MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB );
+$login = new UserSystem($link);
+
+if ( $login->rights == 2 ) // 2 for admin
 {
-    require('../classes/bcrypt.php');
-
     function TestWorkFactor($work_factor = 10)
     {
         $startTime = microtime(true);

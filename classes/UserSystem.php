@@ -6,6 +6,10 @@ require_once('Bcrypt.php');
 
 class UserSystem
 {
+    public $user;
+    public $name;
+    public $rights;
+    
     private $link;
     private $table;
     
@@ -13,6 +17,9 @@ class UserSystem
     {
         $this->link = $link;
         $this->table = $table;
+        
+        session_start();
+        $this->checkSession();
     }
     
     public function GetUserInfo($handle)
@@ -26,34 +33,49 @@ class UserSystem
     
     public function Login($user, $pass)
     {
-        $userClean = $this->link->Clean($handle);
+        $userClean = $this->link->Clean($user);
         
-        $query = "SELECT user_handle, user_hash, user_rights FROM $this->table WHERE user_handle=$userClean";
-        $result = $this->link->Query($query);
+        $query = "SELECT user_handle, user_name, user_hash, user_rights FROM $this->table WHERE user_handle='$userClean'";
         
-        $user = $result[0]['user_handle'];
-        $hash = $result[0]['user_hash'];
-        $rights = $result[0]['user_rights'];
-        
-        if ( Bcrypt::Authenticate($pass, $hash) )
+        if ( $result = $this->link->Query($query) )
         {
-            /* Access Granted */
-            return createSession( $user, $rights );
+            $user = $result[0]['user_handle'];
+            $name = $result[0]['user_name'];
+            $hash = $result[0]['user_hash'];
+            $rights = $result[0]['user_rights'];
+
+            if ( Bcrypt::Authenticate($pass, $hash) )
+            {
+                /* Access Granted */
+                return $this->createSession( $user, $name, $rights );
+            }
         }
-        else
+
+        /* Access Denied */
+        return false;
+    }
+    
+    public function Logout()
+    {
+        return session_destroy();
+    }
+    
+    private function checkSession()
+    {
+        if ( isset($_SESSION['user'], $_SESSION['name'], $_SESSION['rights']) )
         {
-            /* Access Denied */
-            return false;
+            $this->user = $_SESSION['user'];
+            $this->name = $_SESSION['name'];
+            $this->rights = $_SESSION['rights'];
         }
     }
     
-    private function createSession($user, $rights)
+    private function createSession($user, $name, $rights)
     {
-        
-    }
-    
-    private function destroySession()
-    {
-        
+        $_SESSION['user'] = $user;
+        $_SESSION['name'] = $name;
+        $_SESSION['rights'] = $rights;
+
+        return isset( $_SESSION['user'], $_SESSION['name'], $_SESSION['rights'] );
     }
 }
