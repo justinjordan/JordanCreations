@@ -1,0 +1,6 @@
+<?php
+
+define( 'MYSQL_HOST', 'HOST_GOES_HERE' );
+define( 'MYSQL_USER', 'USER_GOES_HERE' );
+define( 'MYSQL_PASS', 'PASS_GOES_HERE' );
+define( 'MYSQL_DB', 'DB_GOES_HERE' );
